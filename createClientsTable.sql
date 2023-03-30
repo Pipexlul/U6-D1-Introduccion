@@ -1,0 +1,10 @@
+CREATE TABLE clients (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR NOT NULL,
+  email VARCHAR(50) NOT NULL UNIQUE,
+  phone VARCHAR(16),
+  company VARCHAR(50) NOT NULL,
+  priority SMALLINT NOT NULL CHECK(priority BETWEEN 1 AND 10),
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
